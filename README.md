@@ -1,2 +1,2 @@
-# hashtag-Python
- curso  com 4 projetos
+# cursoHashtag-Python
+ curso feito na plataforma hashtag 4 projetos
