@@ -24,6 +24,8 @@ pyautogui.PAUSE = 0.5
 pyautogui.press("win")
 pyautogui.write("chorme")
 pyautogui.press('enter')
+time.sleep(1)
+pyautogui.click(x=1888, y=177)
 pyautogui.write("https://dlp.hashtagtreinamentos.com/python/intensivao/login")
 pyautogui.press('enter')
 time.sleep(3)
@@ -38,19 +40,19 @@ pyautogui.press('tab')
 pyautogui.write("senha")
 
 #clique no botão entrar
-pyautogui.click(x=517, y=642)
+pyautogui.click(x=977, y=678)
 time.sleep(2)
+pyautogui.press('tab')
 
 #passo 3 importar a base de dados
-import pandas 
-tabela = pandas.read_csv("produtos.csv")
+import pandas as pd
+tabela = pd.read_csv("produtos.csv")
 print(tabela)
 #passo 4 - cadastrar um produto
 """para cada linha da minha tabela:"""
 for linha in tabela.index:
 
-    pyautogui.click(x=221, y=317)
-
+    pyautogui.press('tab')
     codigo = str(tabela.loc[linha, "codigo"])
     pyautogui.write(codigo)
     pyautogui.press('tab')
@@ -77,7 +79,7 @@ for linha in tabela.index:
     pyautogui.press('tab')
 
     obs = str(tabela.loc[linha, "obs"])
-    if not pandas.isna(obs):
+    if not pd.isna(obs):
         pyautogui.write(obs)
 
     pyautogui.press('tab')
